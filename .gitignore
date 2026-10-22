@@ -1,0 +1,49 @@
+gitignore
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environments (Always ignore local environments)
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment Variables & Secrets (CRITICAL: Never commit these)
+.env
+.env.*
+!.env.example
+secrets.toml
+
+# FastAPI / Database files
+*.db
+*.sqlite3
+*.sqlite3-journal
+*.log
+
+# Testing and Coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.cache/
+.hypothesis/
+
+# Type Checkers and Linters
+.mypy_cache/
+.ruff_cache/
+.pytype/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
