@@ -1,0 +1,35 @@
+#Schema
+# When talking about data (in a dataframe or otherwise) we can refer to its schema. 
+# The schema is a mapping of column or series names to the data types of those same columns or series.
+from datetime import date
+import polars as pl
+
+df = pl.DataFrame(
+    {
+        "name": ["Alice Archer", "Ben Brown", "Chloe Cooper", "Daniel Donovan"],
+        "birthdate": [
+            date(1997, 1, 10),
+            date(1985, 2, 15),
+            date(1983, 3, 22),
+            date(1981, 4, 30),
+        ],
+        "weight": [57.9, 72.5, 53.6, 83.1],  # (kg)
+        "height": [1.56, 1.77, 1.65, 1.75],  # (m)
+    }
+)
+
+# print(df)
+
+# print(df.schema)
+
+df = pl.DataFrame(
+    {
+        "name": ["Alice", "Ben", "Chloe", "Daniel"],
+        "age": [27, 39, 41, 43],
+    },
+    schema={"name": None, "age": pl.UInt8},
+    # schema_overrides={"age": pl.UInt8},  lets you omit columns for which you do not want to override the inference
+)
+
+print(df)
+

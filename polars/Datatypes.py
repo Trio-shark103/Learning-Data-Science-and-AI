@@ -16,4 +16,24 @@ df = pl.DataFrame(
 )
 
 print(df)
+
+#---HEAD-----
 print(df.head(3))# print the first 3 rows of the DataFrame
+
+# ---GLIMPSE-----
+print(df.glimpse(return_type="string"))# print a summary glimpse of the DataFrame in string format
+print(df.glimpse(return_type="frame"))# print a summary glimpse of the DataFrame in DataFrame format    
+print(df.glimpse(return_type="self"))# print a summary glimpse of the DataFrame in self format
+
+
+# ---TAIL-----
+print(df.tail(3))# print the last 3 rows of the DataFrame
+
+# ---SAMPLE-----
+pl.set_random_seed(42)  # For reproducibility.
+
+print(df.sample(2))
+
+#--Describe the DataFrame--
+#compute summary statistics for all columns of your dataframe
+print(df.describe())
