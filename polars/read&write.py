@@ -20,9 +20,9 @@ df = pl.DataFrame(
 print(df)
 
 
-# df.write_csv("polars/output.csv")
-# df_csv = pl.read_csv("polars/output.csv", try_parse_dates=True)
-# print(df_csv)
+df.write_csv("polars/output.csv")
+df_csv = pl.read_csv("polars/output.csv", try_parse_dates=True)
+print(df_csv)
 
 
 #Expressions and contexts
@@ -37,8 +37,8 @@ print(df)
 
 # with "with_columns" you can add new columns to a dataframe. The new columns can be derived from existing columns.
 
-result = df.with_columns(
-    birth_year=pl.col("birthdate").dt.year(),
-    bmi=pl.col("weight") / (pl.col("height") ** 2),
-)
-print(result)
+# result = df.with_columns(
+#     birth_year=pl.col("birthdate").dt.year(),
+#     bmi=pl.col("weight") / (pl.col("height") ** 2),
+# )
+# print(result)
